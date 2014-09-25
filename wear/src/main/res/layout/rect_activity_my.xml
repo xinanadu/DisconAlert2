@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".MyActivity"
     tools:deviceIds="wear_square">
@@ -11,17 +12,25 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_square" />
+        android:text="@string/show" />
 
-    <Button
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="btn getNodes"
-        android:id="@+id/button" />
+        android:orientation="horizontal">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="btn sendMessage"
-        android:id="@+id/button2" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/on_phone"
+            android:id="@+id/btn_phone" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:text="@string/on_wear"
+            android:id="@+id/btn_wear" />
+    </LinearLayout>
 </LinearLayout>

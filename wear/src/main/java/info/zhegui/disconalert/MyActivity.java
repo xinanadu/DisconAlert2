@@ -42,23 +42,23 @@ public class MyActivity extends Activity implements GoogleApiClient.ConnectionCa
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
                 mTextView = (TextView) stub.findViewById(R.id.text);
-                mTextView.setText("test service");
+//                mTextView.setText("test service");
 
-                Button btnGetNodes = (Button) stub.findViewById(R.id.button);
+                Button btnGetNodes = (Button) stub.findViewById(R.id.btn_phone);
                 btnGetNodes.setOnClickListener(new View.OnClickListener() {
 
                     @Override
                     public void onClick(View v) {
-                        getNodes();
+                        sendMessage("");
                     }
                 });
 
-                Button btnSendMsg = (Button) stub.findViewById(R.id.button2);
+                Button btnSendMsg = (Button) stub.findViewById(R.id.btn_wear);
                 btnSendMsg.setOnClickListener(new View.OnClickListener() {
 
                     @Override
                     public void onClick(View v) {
-                        sendMessage("ccc");
+                        startActivity(new Intent(MyActivity.this, FrownActivity.class));
                     }
                 });
             }
@@ -70,6 +70,8 @@ public class MyActivity extends Activity implements GoogleApiClient.ConnectionCa
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
+
+        getNodes();
     }
 
     private void getNodes() {
@@ -99,7 +101,7 @@ public class MyActivity extends Activity implements GoogleApiClient.ConnectionCa
                         mGoogleApiClient, results.get(0), DATA_ITEM_RECEIVED_PATH, null).await();
                 if (!result.getStatus().isSuccess()) {
                     log("ERROR: failed to send Message: " + result.getStatus());
-                }else{
+                } else {
                     log("succeed in sending Message:");
                 }
 

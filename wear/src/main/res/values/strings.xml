@@ -5,5 +5,9 @@
     <string name="hello_round">Hello Round World!</string>
     <string name="hello_square">Hello Square World!</string>
     <string name="title_activity_frown">FrownActivity</string>
+    <string name="disconnected">disconnected</string>
 
+    <string name="show">show what it looks like on</string>
+    <string name="on_phone">phone</string>
+    <string name="on_wear">wear</string>
 </resources>

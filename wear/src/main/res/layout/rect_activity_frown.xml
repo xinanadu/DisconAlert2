@@ -14,5 +14,5 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textSize="30sp"
-        android:text="disconnected from phone" />
+        android:text="@string/disconnected" />
 </RelativeLayout>
