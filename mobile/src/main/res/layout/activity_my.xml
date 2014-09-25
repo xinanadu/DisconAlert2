@@ -11,13 +11,27 @@
 
     <TextView
         android:id="@+id/tv_conn_state"
-        android:text="@string/hello_world"
+        android:text="This app is used as an alert when phone and wear ard disconnected.\n\nshow what it looks like on"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:text="send msg"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_phone"
+            android:layout_width="fill_parent"
+            android:text="phone"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_wear"
+            android:layout_marginTop="20dp"
+            android:layout_width="fill_parent"
+            android:text="wear"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </LinearLayout>

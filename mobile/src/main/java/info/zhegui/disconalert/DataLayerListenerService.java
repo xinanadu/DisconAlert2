@@ -77,9 +77,7 @@ public class DataLayerListenerService extends WearableListenerService {
         super.onMessageReceived(messageEvent);
         log("onMessageReceived("+messageEvent+")");
 
-        Intent intent=new Intent(this, MyService.class);
-        intent.setAction("play_alert_sound");
-        startService(intent);
+        playSound();
     }
 
     @Override
@@ -95,9 +93,17 @@ public class DataLayerListenerService extends WearableListenerService {
 
         log("onPeerDisconnected(" + peer + ")");
 
+        playSound();
+    }
+
+    private void playSound() {
         Intent intent=new Intent(this, MyService.class);
         intent.setAction("play_alert_sound");
         startService(intent);
+
+        Intent intent2=new Intent(this, FrownActivity.class);
+        intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent2);
     }
 
     private void log(String text) {

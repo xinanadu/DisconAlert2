@@ -57,9 +57,6 @@ public class MyActivity extends Activity implements MessageApi.MessageListener, 
         setContentView(R.layout.activity_my);
 
 
-        tvConnState = (TextView) findViewById(R.id.tv_conn_state);
-
-
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(Wearable.API)
                 .addConnectionCallbacks(this)
@@ -68,10 +65,22 @@ public class MyActivity extends Activity implements MessageApi.MessageListener, 
 
         getNodes();
 
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_wear).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendMessage("");
+            }
+        });
+
+        findViewById(R.id.btn_phone).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(MyActivity.this, MyService.class);
+                intent.setAction("play_alert_sound");
+                startService(intent);
+
+                startActivity(new Intent(MyActivity.this, FrownActivity.class));
             }
         });
     }

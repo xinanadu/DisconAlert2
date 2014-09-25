@@ -6,7 +6,10 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="19" />
 
+    <uses-feature android:name="android.hardware.type.watch" android:required="false" />
+
     <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -44,6 +47,10 @@
             android:enabled="true"
             android:exported="false" >
         </service>
+
+        <activity
+            android:name=".FrownActivity" android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
     </application>
 
 </manifest>
